@@ -2,8 +2,9 @@ package uds
 
 import (
 	"net"
-	"github.com/pkg/errors"
 	"net/http"
+
+	"github.com/pkg/errors"
 )
 
 func ListenAndServe(sockPath string, handler http.Handler) error {
