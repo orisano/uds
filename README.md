@@ -1,5 +1,5 @@
 # uds
-unix domain socket utilities for golang.
+unix domain socket utilities for Go.
 
 ## How to Use
 examples/server/main.go
