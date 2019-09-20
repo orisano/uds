@@ -1,5 +1,5 @@
 # uds
-unix domain socket utilities for golang.
+unix domain socket utilities for Go.
 
 ## How to Use
 examples/server/main.go
@@ -25,7 +25,7 @@ func main() {
 		io.WriteString(w, "<html><body><h1>It works!</h1></body></html>")
 	})
 	os.Remove(sockPath)
-	log.Fatal(uds.ListenAndServe("./sample.sock", nil))
+	log.Fatal(uds.ListenAndServe(sockPath, nil))
 }
 
 ```
@@ -58,6 +58,9 @@ func main() {
 	io.Copy(os.Stdout, resp.Body)
 }
 ```
+
+## Author
+Nao YONASHIRO (@orisano)
 
 ## LICENSE
 MIT
