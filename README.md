@@ -1,5 +1,5 @@
 # uds
-unix domain socket utilities for Go.
+A unix domain socket utilities for Go.
 
 ## How to Use
 examples/server/main.go
@@ -60,7 +60,7 @@ func main() {
 ```
 
 ## Author
-Nao YONASHIRO (@orisano)
+Nao Yonashiro (@orisano)
 
 ## LICENSE
 MIT
