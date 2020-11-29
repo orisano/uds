@@ -1,10 +1,9 @@
 package uds
 
 import (
+	"fmt"
 	"net"
 	"net/http"
-
-	"github.com/pkg/errors"
 )
 
 func ListenAndServe(sockPath string, handler http.Handler) error {
@@ -13,7 +12,7 @@ func ListenAndServe(sockPath string, handler http.Handler) error {
 	}
 	l, err := net.Listen("unix", sockPath)
 	if err != nil {
-		return errors.Wrap(err, "failed to listen")
+		return fmt.Errorf("listen unix: %w", err)
 	}
 	return http.Serve(l, handler)
 }
