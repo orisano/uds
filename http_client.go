@@ -8,8 +8,9 @@ import (
 
 func NewClient(sockPath string) *http.Client {
 	t := &http.Transport{
-		DialContext: func(_ context.Context, _, _ string) (net.Conn, error) {
-			return net.Dial("unix", sockPath)
+		DialContext: func(ctx context.Context, _, _ string) (net.Conn, error) {
+			var d net.Dialer
+			return d.DialContext(ctx, "unix", sockPath)
 		},
 	}
 	return &http.Client{
